@@ -1,0 +1,26 @@
+{
+  "name": "tabard",
+  "version": "0.1.0",
+  "description": "Get all keyboard navigable elements, in order",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barneycarroll/tabard.git"
+  },
+  "keywords": [
+    "accessibility",
+    "keyboard",
+    "tab",
+    "navigation",
+    "a11y"
+  ],
+  "author": "barney.carroll@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/barneycarroll/tabard/issues"
+  },
+  "homepage": "https://github.com/barneycarroll/tabard#readme"
+}
