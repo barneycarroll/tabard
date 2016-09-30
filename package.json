@@ -1,8 +1,10 @@
 {
   "name": "tabard",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Get all keyboard navigable elements, in order",
-  "main": "index.js",
+  "module": "es6.js",
+  "jsnext:main": "es6.js",
+  "main": "es5.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
