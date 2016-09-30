@@ -1,6 +1,6 @@
 {
   "name": "tabard",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Get all keyboard navigable elements, in order",
   "module": "es6.js",
   "jsnext:main": "es6.js",
