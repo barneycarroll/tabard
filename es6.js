@@ -2,8 +2,15 @@ const style            = getComputedStyle || ( e => e.currentStyle )
 const inputs           = /input|select|textarea|button|object/i
 const links            = /a|area/i
 
-export default () =>
-  Array.from( document.getElementsByTagName( '*' ) )
+export default selection => [ ...(
+      typeof selection == 'undefined'
+    ? document.getElementsByTagName( '*' )
+    : typeof selection == 'string'
+    ? document.querySelectorAll( selection )
+    : selection.length
+    ? selection
+    : selection.getElementsByTagName( '*' )
+  ) ]
     // DOM conditions
     .filter( e =>
         e.tabIndex != -1 && (

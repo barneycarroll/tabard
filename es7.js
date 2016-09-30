@@ -3,12 +3,19 @@ const style            = getComputedStyle || ( e => e.currentStyle )
 const inputs           = /input|select|textarea|button|object/i
 const links            = /a|area/i
 
-export default () =>
-	document.getElementsByTagName( '*' )
+export default selection => Array.from(
+      typeof selection == 'undefined'
+    ? document.getElementsByTagName( '*' )
+    : typeof selection == 'string'
+    ? document.querySelectorAll( selection )
+    : selection.length
+    ? selection
+    : selection.getElementsByTagName( '*' )
+  )
 		// DOM conditions
-		::filter( e => 
+		::filter( e =>
 				e.tabIndex != -1 && (
-					inputs.test( e.tagName ) && !e.disabled || 
+					inputs.test( e.tagName ) && !e.disabled ||
 					links.test( e.tagName ) && ( e.href || e.tabIndex )
 				)
 		)
@@ -18,6 +25,6 @@ export default () =>
 			style( e ).display    != 'none'
 		)
 		// Sort by tabIndex
-		::sort( ( a, b ) => 
+		::sort( ( a, b ) =>
 			a.tabIndex == b.tabIndex ? 0 : a.tabIndex > b.tabIndex ? 1 : -1
 		)
